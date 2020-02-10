@@ -9,7 +9,7 @@ def main(fn, clusters_no):
     #read location data from csv file and store each location as a Point(latit,longit) object
     df = pd.read_csv(fn)
     for index, row in df.iterrows():
-        loc_ = Point(float(row['LAT']), float(row['LON']))  #tuples for location
+        loc_ = Point(float(row['LAT']), float(row['LON']), int(index))  #tuples for location
         geo_locs.append(loc_)
     #run k_means clustering
     cluster = Clustering(geo_locs, clusters_no)
