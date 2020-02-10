@@ -73,7 +73,7 @@ class Clustering:
     def compute_mean(self, clusters):
         means = []
         for cluster in clusters.values():
-            mean_point = Point(0.0, 0.0)
+            mean_point = Point(0.0, 0.0, 0)
             cnt = 0.0
             for point in cluster:
                 #print "compute: point(%f,%f)" % (point.latit, point.longit)
@@ -132,7 +132,7 @@ class Clustering:
             print("nodes in cluster #{}".format(cluster_cnt))
             cluster_cnt += 1
             for point in cluster:
-                print("point({},{})".format(point.latit, point.longit))
+                print("point({},{})".format(point.latit, point.longit, point.index))
 
     #print means
     def print_means(self, means):
